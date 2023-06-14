@@ -13,11 +13,17 @@ const gameboard = (() => {
     }
 
     const move = (order, row, column) => {
-        if (order === 1) {
+        if (board[row][column] !== 0) {
+            console.log("This position is already filled");
+            return -1;
+        }
+        else if (order === 1) {
             board[row][column] = 1;
+            return 0;
         }
         else if (order === 2) {
             board[row][column] = -1;
+            return 0;
         }
     }
 
@@ -41,5 +47,14 @@ const game = (() => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     }
 
+    const turn = () => {
+        gameboard.display();
+        console.log(`${currentPlayer.name}'s turn`);
+        let row = prompt("What row to play?");
+        let column = prompt("What column to play?");
+
+        if (gameboard.move(currentPlayer.order, row, column) !== -1)
+            switchTurns();
+    };
 })();
 
