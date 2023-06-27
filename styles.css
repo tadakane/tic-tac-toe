@@ -5,7 +5,18 @@
 
 body {
     background-color: black;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100%;
+    display:grid; 
+    background-color: black;
     text-align: center;
+    grid-template-rows: 1fr 5fr;
+    justify-content: center;
 }
 
 h1 {
@@ -17,4 +28,26 @@ h1 {
 #boardPic {
     max-width: 100%;
     height: auto;
+    z-index: -1;
+}
+
+.gamebody {
+    height: 710px;
+    width: 710px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-image: url("images/board.png");
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+.board_slot {
+    height: 234px;
+    width: 234px;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    border:none;
 }
