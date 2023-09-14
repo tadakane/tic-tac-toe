@@ -32,6 +32,18 @@ h1 {
 }
 
 .gamebody {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: stretch;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board {
     height: 710px;
     width: 710px;
     display:grid;
@@ -50,4 +62,13 @@ h1 {
     padding: 0;
     background-color: black;
     border:none;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 200px;
+}
+
+.again {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
